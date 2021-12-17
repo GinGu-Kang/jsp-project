@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../css/account.css' type="text/css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="leftContainer">
+        <div class="imDiv">
+            <a href="index.html" style="width:30%;height: 100%;"><img style="width:20%;height: 10%;" src="../images/logo_dudu.png" alt=""></a>
+        </div>
+        <div class="textDiv">
+      
+            <p style="font-size: 60px;font-weight: bold;">Have and Account?</p><br/>
+            <a style="font-size: 30px;width:22%;height:6%;border: white solid 3px;border-radius: 2em;text-decoration:none; color: white;" href="#"><p style="text-align: center;">Log In</p></a>
+            <div style="height: 20%;"></div>
+        </div>
+    </div>
+
+    
+    <div class="rightContainer">
+        <div class="paddingDiv" style="padding-left: 15%;padding-right: 15%;width: 100%;height: 100%;">
+            
+            
+            <p style="padding-top: 30%;padding-bottom: 10%;font-size: 50px;font-weight: bold;color: rgb(214, 147, 123);">Sign up</p>
+
+                <div class="ageGen" >
+                    <div class="age">
+                        <input type="number" max="99" style="height: 30%;width: 100%;font-size: 16px;" placeholder="Age *"></input>
+                        <hr style="border:solid 1px rgb(209, 204, 204)">
+                    </div>
+                    
+                    <div class="gender">
+                        <input type="email" style="height:30%;width: 100%;font-size: 16px;" placeholder="Gender *"></input>
+                        <hr style="border:solid 1px rgb(209, 204, 204)">
+                        <div class="selectGen">
+                            <input name = "gender" style="width: 15px;height: 15px;" type="checkbox" onclick='checkOnlyOne(this)'> <p style="color: rgb(126, 121, 121);font-size: 18px;padding-right: 12%;">남성</p>
+                            <input name = "gender" style="width: 15px;height: 15px;" type="checkbox" onclick='checkOnlyOne(this)'> <p style="color: rgb(126, 121, 121);font-size: 18px;padding-right: 20%;">여성</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <input type="email" style="height: 7%;width: 100%;font-size: 16px;" placeholder="Username or Email Adress *"></input>
+                <hr style="border:solid 1px rgb(209, 204, 204)">
+
+                <input type="password" style="height: 7%;width: 100%;font-size: 16px;" placeholder="Password *"></input>
+                <hr style="border:solid 1px rgb(209, 204, 204)">
+                <div style="width: 100%;height: 10%;padding-top: 2%;display: flex;">
+
+                    <a class="loginQuess" href="#" style="text-decoration: none;color: rgb(141, 85, 85);"><p>&nbsp;로그인 하시겠습니까?</p></a>
+                </div>
+
+                <p style="color: rgb(126, 121, 121);font-size: 18px;">회원가입시 입력했던 이메일과  비밀번호를 입력해주세요</p>
+                <br><br>
+                <div class="loginCon" style="height: 10%;">
+                <a href="#" class="loginButton" onclick="return chk_form()" >Sign up</a>
+            </div>
+                
+
+        </div>
+        
+
+    </div>
+
+    
+<script>
+    function checkOnlyOne(element) {
+    
+    const checkboxes = document.getElementsByName("gender");
+        console.log(checkboxes)
+    checkboxes.forEach((cb) => {
+        console.log(cb)
+        cb.checked = false;
+    })
+    element.checked = true;
+    }
+
+
+</script>
+                    
+</body>
+</html>

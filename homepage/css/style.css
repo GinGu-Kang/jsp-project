@@ -1,0 +1,262 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Noto+Sans+KR:wght@300;500&display=swap');
+/* font-family: 'Alegreya Sans SC', sans-serif; */
+
+/* reset css*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ; /*border,padding 을 넣어도 박스가 커지는 것을 방지*/
+
+}
+
+ul,ol,li{
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+    outline: 0;;
+}
+
+/* layout 설정*/
+main{
+    width: 100%;
+    height: 100vh; /* 높이값을 보여지는 해상도 높이값 ( view port) 을 꽉 채우는 설정*/
+    background: #333;
+    display: flex; /* header 와 section을 가로배열*/
+
+}
+
+main header{
+    width: 20%;
+    height: 100%;
+    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap; /*세로 줄바꿈 처리*/
+    align-content: space-between; /*상하 양끝정렬*/
+    justify-content: center; /*가로폭의 중앙정렬*/
+    position: relative; /* 자식요소에absolute를 주기 위해*/
+    z-index: 3; /*영역을 위쪽에(z 방향 )배치-숫자가 클수록 위쪽에 배치 */
+    
+
+}
+
+main nav{
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    z-index: 3;
+    
+
+
+
+}
+
+main section{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    padding-top: 140px;
+    z-index: 1;
+    
+
+}
+
+/*header*/
+main header h1{
+    font-size: 0; /*안쪽의 자간과 줄 높이를 초기화*/
+    color:#fff;
+
+}
+main header h1 i{
+    font-size: 5vw;
+    margin-bottom: 15px;
+
+}
+main header h1 span{
+    font: normal 0.8vw/1 "arial";
+}
+main header address{
+    font: normal 11px/1.2 "arial";
+    color: #888;
+
+}
+
+/* Top icon */
+main nav ul{
+    display: flex;
+    
+}
+
+main nav ul li a{
+    font-size: 18px;
+    color: #bbb;
+    margin-right: 30px;
+}
+main nav ul li a:hover{
+    color: #fff;
+    transition: all 0.3s; /*0.3 초 동안 변환*/
+}
+
+/* contents*/
+
+main section article{
+    position: relative;
+    flex:1; /*모든 article 요소 너비 동등하게 적용*/
+    padding: 70px 40px 100px; /*3개의 값은 위70px 좌우 40px 아래100px*/
+    opacity: 0.6; /*0~1 0:은 완전 투명, 1은 완전 불투명 0~1 사이에서 투명도 조절*/
+    transition: flex 1s, opacity 1s;
+    z-index: 1;
+    cursor: pointer;
+
+}
+main section article::before{
+    /*마우스 호버했을때 왼쪽에서 나타날 가상의 패널 요소 설정*/
+    content: "";
+    display: block;
+    width: 80%;
+    height: 95%;
+    background: #444;
+    position:absolute;
+    top:0;
+    left: -200px; /*왼쪽 바깥영역에 위치시키기 위해*/
+    opacity: 0;
+    transition: 1s;
+
+}
+main section article .inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    position: relative;
+}
+main section article .inner .txt{
+    width: 100%;
+    transition: .5s;
+}
+main section article .inner .txt h2{
+    font:normal 2vw/1 "Alegreya Sans SC";
+    color: #fff;
+    margin-bottom: 40px;
+    padding-top: 70px;
+    transition: 1.5s;
+
+}
+main section article .inner .txt h2::after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #777;
+    margin-top: 20px;
+    transition: 1.5s;
+
+}
+main section article .inner .txt p{
+    font:14px/1.4 "arial";
+    color: #999;
+}
+
+
+/*동영상*/
+
+main section article .inner figure{
+    width: 100%;
+    height: 15vh;
+    background: #777;
+    transform-origin: left center; /*왼쪽 방향 기준으로 변형이 일어나도록 중심축 변경*/
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.3); 
+    position: relative;
+    overflow: hidden; /* 넘치는 요소 숨김처리 */
+    filter: saturate(10%); /*영상박스 채도 10%낮춤*/
+    transition: 1s;
+}
+main section article .inner figure video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*영상이 figure 영역에 꽉차도록*/
+    transition: scale(1.1); /*영상 가장자리의 여백을 숨김처리를 위해 살짝 확대*/
+}
+
+/*hover 기능*/
+main section article:hover{
+    flex:1.5;
+    opacity: 1;
+    z-index: 2;
+
+}
+main section article:hover::before{
+    left: 0;
+    opacity: 1;
+}
+main section article:hover .inner .txt {
+    width: 75%;
+
+}
+main section article:hover .inner .txt h2{
+    font-size: 5vw;
+    padding-top: 0;
+}
+main section article:hover .inner .txt h2::after{
+    width: 120px;
+    background: orange;
+}
+main section article:hover .inner figure{
+    height: 25vh;
+    filter: saturate(120%); /*영상박스의 채도를 120% 높여줌*/
+    transform: translate(3vh); /*변형-애니메이션효과 y축 방향 기준으로 3vh 이동*/
+}
+
+
+/*클릭하면 띄워질 영상 소개 페이지*/
+main aside{
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    position: absolute;
+    top:0;
+    left: -100%; /*화면 바깥 위치*/
+    opacity: 0;
+    z-index: 2; /*section 위쪽으로 올라옴*/
+    box-sizing: border-box;
+    padding: 20vh 7vw 14vh 20vw;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+main aside.on {
+    opacity: 1;
+    left: 0%; /*왼쪽바깥에서 안쪽 화면으로 이동*/
+}
+main aside .txt {
+    width: 25%;
+    height: 100%;
+}
+main aside .txt h1 { 
+    font: normal  6vw/1 "Alegreya Sans SC";
+    color: #ddd;
+    margin-bottom: 20px;
+}
+main aside .txt p {
+    font: 1.1vw/1.3 "arial";
+    color: #666;
+    margin-bottom: 60px;
+}
+main aside .txt span {
+    cursor: pointer;
+    color: orange;
+}
+main aside figure {
+    width: 72%;
+    height: 100%;
+}
+main aside figure video {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}

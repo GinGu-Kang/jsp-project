@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex기반의 윂페이지 실습</title>
+    <!--구글 아이콘 연결 스크립트-->
+    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
+
+    <!-- 직접 작성 css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 연결 스크립트 -->
+    <script defer src="js/ie.js"></script>
+    <!-- 자바스크립트를 호출할때 defer 을 지정하면 웹 브라우저의 자파스크립트의 해석기가 <body>를 
+    해석하면서 동시에 외부 스크립트 파일을 가져온다. 그리고 웹브라우저의 <body> 영역의 내용이 모두
+    출력되면 외부 스크립트도 파일을 실행한다. **유용한 방법-->
+    <script defer src="js/main.js"></script>
+
+</head>
+<body>
+    <main>
+        <header>
+            <h1>
+                <i class="fab fa-firstdraft"></i><br>
+                <span>DESIGN ON</span>
+            </h1>
+
+            <address>
+                2021 DESIGN ON<br>ALL RIGHT RESERVED.
+            </address>
+    
+        </header>
+
+        <!--top icon-->
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+
+
+        <!-- contents-->    
+        <section>
+            <!--article 01-->
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>01</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                        <br>adipisicing elit. </p>
+                    </div>
+
+                    <!-- 동영상 영역-->
+                    <figure>
+                        <video src="vids/vid1.mp4" muted loup></video> <!-- muted: 비디오, 오디오 출력시 음소거, loup: 무한재생-->
+                    </figure>
+                </div>
+            </article>
+            <!--article 02-->
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>02</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                        <br>adipisicing elit. </p>
+                    </div>
+
+                    <!-- 동영상 영역-->
+                    <figure>
+                        <video src="vids/vid2.mp4" muted loup></video> <!-- muted: 비디오, 오디오 출력시 음소거, loup: 무한재생-->
+                    </figure>
+                </div>
+            </article>
+            <!--article 03-->
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>03</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                        <br>adipisicing elit. </p>
+                    </div>
+
+                    <!-- 동영상 영역-->
+                    <figure>
+                        <video src="vids/vid3.mp4" muted loup></video> <!-- muted: 비디오, 오디오 출력시 음소거, loup: 무한재생-->
+                    </figure>
+                </div>
+            </article>
+            <!--article 04-->
+            <article>
+                <div class="inner">
+                    <div class="txt">
+                        <h2>04</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur 
+                        <br>adipisicing elit. </p>
+                    </div>
+
+                    <!-- 동영상 영역-->
+                    <figure>
+                        <video src="vids/vid4.mp4" muted loup></video> <!-- muted: 비디오, 오디오 출력시 음소거, loup: 무한재생-->
+                    </figure>
+                </div>
+            </article>
+        </section>
+        <!--클릭하면 띄워질 영상 소개 페이지-->
+        <aside>
+            <div class="txt">
+                <h1>01</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <span>CLOSE</span>
+            </div>
+            <figure>
+                <video src="vids/vid1.mp4" muted loup></video> 
+            </figure>
+        </aside>
+    </main>
+</body>
+</html>
